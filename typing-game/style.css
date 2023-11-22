@@ -1,0 +1,11 @@
+.highlight {
+    background-color: yellow;
+  }
+  
+  .error {
+    background-color: lightcoral;
+    border: red;
+  }
+  body{
+    font-family: monospace;
+  }
