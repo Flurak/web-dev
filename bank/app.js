@@ -55,6 +55,39 @@ function updateState(property, newData) {
 }
 
 //----------------------------------------------
+//                  Api Interactions
+//----------------------------------------------
+
+async function sendRequest(api, method, body) {
+  try {
+    const response = await fetch(serverUrl + api, {
+      method: method || "GET",
+      headers: body ? { "Content-Type": "application/json" } : undefined,
+      body,
+    });
+    return await response.json();
+  } catch (error) {
+    return { error: error.message || "Unknown error" };
+  }
+}
+
+async function getAccount(user) {
+  return sendRequest("/accounts/" + encodeURIComponent(user));
+}
+
+async function createAccount(account) {
+  return sendRequest("/accounts", "POST", account);
+}
+
+async function createTransaction(user, transaction) {
+  return sendRequest(
+    "/accounts/" + user + "/transactions",
+    "POST",
+    transaction
+  );
+}
+
+//----------------------------------------------
 //                  Login / Register
 //----------------------------------------------
 
@@ -157,42 +190,10 @@ function onLinkClick(event) {
   navigate(event.target.href);
 }
 
-//----------------------------------------------
-//                  Api Interactions
-//----------------------------------------------
-
-async function sendRequest(api, method, body) {
-  try {
-    const response = await fetch(serverUrl + api, {
-      method: method || "GET",
-      headers: body ? { "Content-Type": "application/json" } : undefined,
-      body,
-    });
-    return await response.json();
-  } catch (error) {
-    return { error: error.message || "Unknown error" };
-  }
-}
-
-async function getAccount(user) {
-  return sendRequest("/accounts/" + encodeURIComponent(user));
-}
-
-async function createAccount(account) {
-  return sendRequest("/accounts", "POST", account);
-}
-
-async function createTransaction(user, transaction) {
-  return sendRequest(
-    "/accounts/" + user + "/transactions",
-    "POST",
-    transaction
-  );
-}
-
 //-----------------------------
 //        transaction dialog
 //-----------------------------
+
 function addTransaction() {
   const dialog = document.getElementById("transactionDialog");
   dialog.classList.add("show");
@@ -207,9 +208,9 @@ function addTransaction() {
 
 async function confirmTransaction() {
   const dialog = document.getElementById("transactionDialog");
-  dialog.classList.remove("show");
 
   const transactionForm = document.getElementById("transactionForm");
+  console.log("Form data:", transactionForm);
 
   const formData = new FormData(transactionForm);
   const jsonData = JSON.stringify(Object.fromEntries(formData));

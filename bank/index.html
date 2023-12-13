@@ -87,9 +87,49 @@
     </template>
 
     <template id="transaction">
-      <h1>Add transaction</h1>
-      <section>
-        <a href="/dashboard" onclick="onLinkClick(event)">Cancel</a>
+      <a
+        href="/dashboard"
+        class="transactionButton"
+        onclick="onLinkClick(event)"
+        >Return</a
+      >
+      <section id="transactionDialog" class="dialog">
+        <div class="dialog-content">
+          <h2 class="text-center">Add transaction</h2>
+          <form id="transactionForm" action="javascript:void(0)">
+            <label for="date">Date</label>
+            <input id="date" name="date" type="date" required />
+            <label for="object">Object</label>
+            <input
+              id="object"
+              name="object"
+              type="text"
+              maxlength="50"
+              required
+            />
+            <label for="amount">Amount (use negative value for debit)</label>
+            <input
+              id="amount"
+              name="amount"
+              type="number"
+              value="0"
+              step="any"
+              required
+            />
+            <div id="transactionError" class="error" role="alert"></div>
+            <div class="dialog-buttons">
+              <button
+                type="button"
+                class="button-alt"
+                formaction="javascript:cancelTransaction()"
+                formnovalidate
+              >
+                Cancel
+              </button>
+              <button formaction="javascript:confirmTransaction()">OK</button>
+            </div>
+          </form>
+        </div>
       </section>
     </template>
 
