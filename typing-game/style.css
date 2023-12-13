@@ -1,11 +1,19 @@
 .highlight {
-    background-color: yellow;
-  }
-  
-  .error {
-    background-color: lightcoral;
-    border: red;
-  }
-  body{
-    font-family: monospace;
-  }
+  background-color: rgb(255, 255, 0);
+}
+
+.error {
+  background-color: lightcoral;
+  border: red;
+}
+body {
+  font-family: monospace;
+  max-width: 80%;
+  text-align: center;
+  font-family: sans-serif;
+}
+h1 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+#start {
+}
