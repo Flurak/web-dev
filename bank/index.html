@@ -46,6 +46,7 @@
             />
             <label for="balance">Current balance</label>
             <input id="balance" name="balance" type="number" value="0" />
+            <div id="registerError" class="error" role="alert"></div>
             <button>Register</button>
           </form>
         </div>
@@ -68,7 +69,7 @@
         <h2>Transactions</h2>
         <table>
           <thead>
-            <tr>
+            <tr class="table">
               <th>Date</th>
               <th>Object</th>
               <th>Amount</th>
@@ -76,6 +77,19 @@
           </thead>
           <tbody id="transactions"></tbody>
         </table>
+      </section>
+      <a
+        href="transaction"
+        class="transactionButton"
+        onclick="onLinkClick(event)"
+        >Add Transaction</a
+      >
+    </template>
+
+    <template id="transaction">
+      <h1>Add transaction</h1>
+      <section>
+        <a href="/dashboard" onclick="onLinkClick(event)">Cancel</a>
       </section>
     </template>
 

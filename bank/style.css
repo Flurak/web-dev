@@ -1,69 +1,79 @@
 body {
-  margin: 5% 30% 0 30%;
-  background-color: #203321;
-  font-family: Arial, Helvetica, sans-serif;
-  text-shadow: 1px 5px 2px black;
-  color: white;
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  background-color: #ddd;
+  color: #333;
+}
+
+#app {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  background-color: #728878;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+header a {
+  color: #fff;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+header a:hover {
+  text-decoration: underline;
+}
+
+.form {
+  margin-bottom: 20px;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-
-h1 {
-  font-size: 4em;
-  text-align: center;
-  font-variant: small-caps;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-}
-
-h2 {
-  text-align: center;
-  font-weight: bold;
-  font-variant: small-caps;
-  font-size: 2.5em;
 }
 
 label {
-  text-shadow: none;
-  font-weight: bold;
-  text-align: center;
-  font-variant: small-caps;
-  padding: 0.5em;
+  margin-top: 10px;
 }
 
-a {
+input,
+button {
+  margin-top: 5px;
+  padding: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.transactionButton {
+  display: inline-block;
+  padding: 10px;
+  background-color: #728878;
+  color: #fff;
   text-decoration: none;
-  color: white;
-  text-shadow: none;
-  font-size: 2em;
-  margin: 0 10% 0 10%;
-}
-a:hover {
-  text-shadow: none;
+  border-radius: 5px;
+  margin-top: 20px;
 }
 
-.balance {
-  text-align: center;
-  margin: 5em 0 5em 0;
-}
-
-.table {
-  text-align: center;
-  padding: 5em 6.66% 5em 6.66%;
-}
-
-.form {
-  color: #203321;
-  background-color: white;
-  padding: 1em;
-  margin-top: 2em;
-  margin-bottom: 2em;
-  border-radius: 2em;
-  text-shadow: none;
-  border-style: solid;
-  border-color: #3b473b;
-  border-width: 0.5em;
+@media (max-width: 600px) {
+  #app {
+    padding: 10px;
+  }
 }

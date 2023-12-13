@@ -1,0 +1,38 @@
+body {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #fff, grey);
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #000;
+  font-family: impact;
+}
+
+button {
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  margin: 1em;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 0.5em;
+  border-style: none;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#result {
+  font-size: 1.5em;
+  margin-top: 20px;
+  color: #333;
+}
+
+#heroStatus {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #333;
+}
